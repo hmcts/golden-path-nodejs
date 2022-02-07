@@ -4,11 +4,15 @@ An application will be generated from a template and deployed to a Kubernetes cl
 At the end of this tutorial, you will be able to access your application via the HMCTS VPN and will have made changes to it.
 
 ## Prerequisites
-The following are required to complete the steps in this tutorial:
-- Github Steps
-- VPN Access
+GitHub access is required to complete the steps in this tutorial. See the [onboarding guide](https://hmcts.github.io/onboarding/team/github.html#github) to get setup.
 
-See the [onboarding guide](https://hmcts.github.io/onboarding/team/github.html#github) to get setup.
+Join the [slack channels](https://github.com/hmcts/golden-path-nodejs/blob/master/docs/index.md#slack-channels)
+
+## Slack Channels
+
+- [#golden-path](https://hmcts-reform.slack.com/app_redirect?channel=golden-path) is for community discussion about the tutorials.
+- [#labs-build-notices](https://hmcts-reform.slack.com/app_redirect?channel=labs-build-notices) Jenkins build notices channel.
+- [#platops-help](https://hmcts-reform.slack.com/app_redirect?channel=platops-help) is for raising support requests to the `Platform Operations` team.
 
 ## Steps
 
@@ -53,9 +57,29 @@ Any GitHub repository that starts with `labs-*` will be listed as part of this s
 
 3. Wait for your build to complete against the `master` branch, (click the Play button if it hasn't started by itself).
 
-#### Configure load balancing for high availability
+#### Configure Front Door for Application
+You will need to add a couple of lines of config for the application to the sandbox front door config file.
+1. Open [sbox/sbox.tfvars](https://github.com/hmcts/azure-platform-terraform/blob/master/environments/sbox/sbox.tfvars) in your browser.
+2. Click the pencil button to edit the file in GitHub.
+3. Add configuration to the bottom of the file, see example [here](https://github.com/hmcts/azure-platform-terraform/blob/acb0c544127d136c14f0f1d15ba24f79132a9b60/environments/sbox/sbox.tfvars#L396)
+4. Scroll down to the bottom to the 'Commit changes' section. Select create a new branch for this commit and give your branch a name. Commit the file and create a pull request.
+5. To complete this section you will need your pull request to be approved, someone on your team should be able to do this. If you get stuck try asking in #platops-code-review on Slack. Once approved and the build has passed then merge your pull request. If you have a permissions issue then ask in #golden-path on Slack.
+
+More info can be found [here](https://hmcts.github.io/ways-of-working/path-to-live/front-door.html#purpose). 
+
 #### Deploy application
+
+
 #### Access application
+If all went well your application should be visible now.
+
+The URL will be (update the GitHub username variable):
+   ```
+   http://labs-$yourGitHubUsername.sandbox.platform.hmcts.net
+   ```  
+
+Open this in your browser, you should see:
+
 
 #### Customise application
 We are going to update the application by changing the home page.
