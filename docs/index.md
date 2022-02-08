@@ -118,7 +118,7 @@ We are going to update the application by changing the home page.
 1. Open the 'home.njk' file inside the 'src/main/views'
 2. Edit the html heading to change the webpage's text
   ```yaml
-  <h1 class="govuk-heading-xl">I've made my first change to a webpage</h1>
+  <h1 class="govuk-heading-xl">Hello World!</h1>
    ```
 3. Ask someone on your team to review your pull request and then merge it.
 4. Run the Jenkins pipeline against the master branch (this will trigger automatically on the production Jenkins instance).
