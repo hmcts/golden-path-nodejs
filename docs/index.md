@@ -99,7 +99,8 @@ To make sure your pod is running as expected and to check the status of your Hel
 
 ```command
  kubectl get hr labs-YourGithubUsername -n labs
- kubectl get pods -l app.kubernetes.io/name=labs-YourGithubUsername-java -n labs
+ kubectl get pods -l app.kubernetes.io/name=labs-YourGithubUsername-nodejs -n labs
+```
 
 #### Access application
 If all went well your application should be visible now.
