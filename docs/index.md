@@ -57,6 +57,17 @@ Any GitHub repository that starts with `labs-*` will be listed as part of this s
 
 3. Wait for your build to complete against the `master` branch, (click the Play button if it hasn't started by itself).
 
+#### Configure Public DNS for Application
+You will need to add a couple of lines of config for the application to the sandbox public DNS config file.
+1. Open [environments/sandbox.yml](https://github.com/hmcts/azure-public-dns/blob/master/environments/sandbox.yml) in your browser.
+2. Click the pencil button to edit the file in Github.
+3. Add configuration to the bottom of the file, see example [here](https://github.com/hmcts/azure-public-dns/blob/27e92eb7881eafe81dd9fbed47c51c18630f862e/environments/sandbox.yml#L156)
+4. Scroll down to the bottom to the 'Commit changes' section. Select create a new branch for this commit and give your branch a name. Commit the file and create a pull request.
+5. To complete this section you will need your pull request to be approved, someone on your team should be able to do this. If you get stuck try asking in #platops-code-review on Slack. Once approved and the build has passed then merge your pull request. If you have a permissions issue then ask in #golden-path on Slack.
+6. Once your pull request has been merged, ensure the pipeline has ran successfully and applied you changes [here](https://dev.azure.com/hmcts/PlatformOperations/_build?definitionId=278&_a=summary) before proceeding to the [next step](https://github.com/hmcts/golden-path-nodejs/blob/DTSPO-5507-DocumentingNodejsGoldenPath/docs/index.md#configure-front-door-for-application).
+
+More info can be found [here](https://hmcts.github.io/ways-of-working/path-to-live/public-dns.html#public-dns). 
+
 #### Configure Front Door for Application
 You will need to add a couple of lines of config for the application to the sandbox front door config file.
 1. Open [sbox/sbox.tfvars](https://github.com/hmcts/azure-platform-terraform/blob/master/environments/sbox/sbox.tfvars) in your browser.
@@ -99,9 +110,3 @@ text here
 
 See our [troubleshooting](https://hmcts.github.io/ways-of-working/troubleshooting/#troubleshooting-issues) guide.
         
-
-## Slack Channels
-
-- [#golden-path](https://hmcts-reform.slack.com/app_redirect?channel=golden-path) is for community discussion about the tutorials.
-- [#labs-build-notices](https://hmcts-reform.slack.com/app_redirect?channel=labs-build-notices) Jenkins build notices channel.
-- [#platops-help](https://hmcts-reform.slack.com/app_redirect?channel=platops-help) is for raising support requests to the `Platform Operations` team.
