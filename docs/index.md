@@ -127,6 +127,7 @@ Open this in your browser, you should see:
 We are going to update the application by changing the home page.
 1. Open the 'home.njk' file inside the 'src/main/views'
 2. Edit the html heading to change the webpage's text
+   
    Before:
   ```yaml
   <h1 class="govuk-heading-xl">Default Page Template</h1>
