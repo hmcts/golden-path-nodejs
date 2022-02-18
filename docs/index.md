@@ -134,10 +134,7 @@ We are going to update the application by changing the home page.
 4. Run the Jenkins pipeline against the master branch (this will trigger automatically on the production Jenkins instance).
 6. Reload your application in your browser and check it now shows your change to the heading.
 
-## Feedback
-text here
 
 ## Troubleshooting
-
 See our [troubleshooting](https://hmcts.github.io/ways-of-working/troubleshooting/#troubleshooting-issues) guide.
         
