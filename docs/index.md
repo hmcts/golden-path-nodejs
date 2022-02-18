@@ -132,7 +132,8 @@ We are going to update the application by changing the home page.
    ```
 3. Ask someone on your team to review your pull request and then merge it.
 4. Run the Jenkins pipeline against the master branch (this will trigger automatically on the production Jenkins instance).
-6. Reload your application in your browser and check it now shows your change to the heading.
+6. Reload your application in your browser and check it now shows your change to the heading:
+![Hello World](https://github.com/hmcts/golden-path-nodejs/blob/DTSPO-5507-DocumentingNodejsGoldenPath/images/HelloWorld.png)
 
 
 ## Troubleshooting
