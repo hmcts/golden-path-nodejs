@@ -121,7 +121,7 @@ The URL will be (update the GitHub username variable):
    ```  
 
 Open this in your browser, you should see:
-![Default Page Template](golden-path-nodejs/images/DefaultPageTemplate.png)
+![Default Page Template](https://github.com/hmcts/golden-path-nodejs/blob/DTSPO-5507-DocumentingNodejsGoldenPath/images/DefaultPageTemplate.png)
 
 #### Customise application
 We are going to update the application by changing the home page.
