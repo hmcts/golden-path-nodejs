@@ -1,0 +1,10 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: golden-path-nodejs
+  annotations:
+    github.com/project-slug: hmcts/golden-path-nodejs
+spec:
+  type: documentation
+  lifecycle: unknown
+  owner: dts_platform_operations
