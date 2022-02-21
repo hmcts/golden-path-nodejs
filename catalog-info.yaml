@@ -5,6 +5,6 @@ metadata:
   annotations:
     github.com/project-slug: hmcts/golden-path-nodejs
 spec:
-  type: other
+  type: documentation
   lifecycle: unknown
   owner: dts_platform_operations
