@@ -4,6 +4,7 @@ metadata:
   name: golden-path-nodejs
   annotations:
     github.com/project-slug: hmcts/golden-path-nodejs
+    backstage.io/techdocs-ref: dir:.
 spec:
   type: documentation
   lifecycle: unknown
