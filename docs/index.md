@@ -48,7 +48,7 @@ Click `Create` in the Backstage sidebar and choose [`ExpressJS`](https://backsta
 
   - Owner:                         `hmcts`
 
-  - Repository:                    `labs-YourGithubUsername`
+  - Repository:                    `labs-YourGithubUsername-nodejs`
 
 ### Build application
 
