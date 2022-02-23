@@ -10,13 +10,10 @@ Before starting this tutorial, make sure you have:
 
 - An account on HMCTS Azure AD. See the [onboarding guide](https://hmcts.github.io/onboarding/person/#azure-ad-groups) to get set up.
 - Access to the HMCTS GitHub organisation. See the [onboarding guide](https://hmcts.github.io/onboarding/team/github.html#github) to get setup.
-- (Recommended) Join the Slack channels
-
-## Slack Channels
-
-- [#golden-path](https://hmcts-reform.slack.com/app_redirect?channel=golden-path) is for community discussion about the tutorials.
-- [#labs-build-notices](https://hmcts-reform.slack.com/app_redirect?channel=labs-build-notices) Jenkins build notices channel.
-- [#platops-help](https://hmcts-reform.slack.com/app_redirect?channel=platops-help) is for raising support requests to the `Platform Operations` team.
+- (Recommended) Join the below Slack channels
+  - [#golden-path](https://hmcts-reform.slack.com/app_redirect?channel=golden-path) is for community discussion about the tutorials.
+  - [#labs-build-notices](https://hmcts-reform.slack.com/app_redirect?channel=labs-build-notices) Jenkins build notices channel.
+  - [#platops-help](https://hmcts-reform.slack.com/app_redirect?channel=platops-help) is for raising support requests to the `Platform Operations` team.
 
 ## Steps
 
