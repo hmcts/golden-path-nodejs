@@ -159,3 +159,7 @@ After:
 ## Troubleshooting
 
 See our [troubleshooting](https://hmcts.github.io/ways-of-working/troubleshooting/#troubleshooting-issues) guide.
+
+Common issues:
+-  Error: Your lockfile needs to be updated, but yarn was run with `--frozen-lockfile`. This error means your yarn.lock file needs to be updated. You can do this by running the command `yarn install` in the root directory of your repository.
+
