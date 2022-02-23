@@ -158,4 +158,9 @@ After:
 
 ## Troubleshooting
 
+Common issues:
+-  ```text
+   error Your lockfile needs to be updated, but yarn was run with `--frozen-lockfile`.
+   ```  
+
 See our [troubleshooting](https://hmcts.github.io/ways-of-working/troubleshooting/#troubleshooting-issues) guide.
