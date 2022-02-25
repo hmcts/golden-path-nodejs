@@ -28,7 +28,7 @@ Click `Create` in the Backstage sidebar and choose [`ExpressJS`](https://backsta
 - Page 1 - Provide some simple information
   - Product:                       `labs`
 
-  - Component:                     `YourGithubUsername` - make sure you update this
+  - Component:                     `YourGithubUsername-nodejs` - make sure you update this
 
   - Slack contact channel:         `cloud-native`
 
