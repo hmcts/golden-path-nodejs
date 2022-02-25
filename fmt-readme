@@ -1,0 +1,2 @@
+remark README.md  > README.md.2 && mv README.md.2 README.md
+remark docs/index.md  > docs/index.md.2 && mv docs/index.md.2 docs/index.md

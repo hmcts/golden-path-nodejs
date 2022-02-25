@@ -114,10 +114,10 @@ You will need to add a couple of lines of config for the application to the sand
 
 1. Open [sandbox-platform-hmcts-net.yml](https://github.com/hmcts/azure-private-dns/blob/master/environments/sandbox/sandbox-platform-hmcts-net.yml) in your browser.
 2. Click the pencil icon to edit the file in Github.
-3. Add configuration to the bottom of the file, see [example](https://github.com/hmcts/azure-private-dns/pull/326/files)
+3. Add configuration to the bottom of the file, see [example](https://github.com/hmcts/azure-private-dns/pull/326/files).
 4. Scroll down to the bottom to the 'Commit changes' section. Select `Create a new branch for this commit and start a pull request` and give your branch a name. Commit the file and create a pull request.
 5. To complete this section you will need your pull request to be approved, someone on your team should be able to do this. If you get stuck try asking in #platops-code-review on Slack. Once approved and the build has passed then merge your pull request. If you have a permissions issue then ask in #golden-path on Slack.
-6. Once your pull request has been merged, ensure the pipeline has run successfully and applied your changes in [Azure Devops](https://dev.azure.com/hmcts/CNP/_build?definitionId=321)
+6. Once your pull request has been merged, ensure the pipeline has run successfully and applied your changes in [Azure Devops](https://dev.azure.com/hmcts/CNP/_build?definitionId=321).
 
 ### Access application
 
@@ -130,7 +130,7 @@ The URL will be (update the GitHub username variable):
    ```  
 
 Open this in your browser, you should see:
-![Default Page Template](/images/DefaultPageTemplate.png)
+![Default Page Template](images/DefaultPageTemplate.png)
 
 ### Customise application
 
@@ -154,7 +154,7 @@ After:
 3. Ask someone in your team to review your pull request and then merge it.
 4. Run the Jenkins pipeline against the master branch (this will trigger automatically on the production Jenkins instance).
 5. Reload your application in your browser and check it now shows your change to the heading:
-![Hello World](/images/HelloWorld.png)
+![Hello World](images/HelloWorld.png)
 
 ## Troubleshooting
 
