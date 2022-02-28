@@ -58,8 +58,21 @@ Any GitHub repository that starts with `labs-*` will be listed as part of this s
 
 3. Wait for your build to complete against the `master` branch, (click the Play button if it hasn't started by itself).
 
-### Configure Public DNS for Application
+### Configure Private DNS for Application
 
+Private DNS configuration allows for your application to be accessed over the VPN.
+You will need to add a couple of lines of config for the application to the sandbox private DNS config file.
+
+1. Open [sandbox-platform-hmcts-net.yml](https://github.com/hmcts/azure-private-dns/blob/master/environments/sandbox/sandbox-platform-hmcts-net.yml) in your browser.
+2. Click the pencil icon to edit the file in Github.
+3. Add configuration to the bottom of the file, see [example](https://github.com/hmcts/azure-private-dns/pull/326/files).
+4. Scroll down to the bottom to the 'Commit changes' section. Select `Create a new branch for this commit and start a pull request` and give your branch a name. Commit the file and create a pull request.
+5. To complete this section you will need your pull request to be approved, someone on your team should be able to do this. If you get stuck try asking in #platops-code-review on Slack. Once approved and the build has passed then merge your pull request. If you have a permissions issue then ask in #golden-path on Slack.
+6. Once your pull request has been merged, ensure the pipeline has run successfully and applied your changes in [Azure Devops](https://dev.azure.com/hmcts/CNP/_build?definitionId=321).
+
+### Configure Public DNS for Application (Optional)
+
+Configuring Public DNS allows your application to run without VPN access. The steps are identical to configuring private DNS so this section is optional.
 You will need to add a couple of lines of config for the application to the sandbox public DNS config file.
 
 1. Open [environments/sandbox.yml](https://github.com/hmcts/azure-public-dns/blob/master/environments/sandbox.yml) in your browser.
@@ -107,17 +120,6 @@ To make sure your pod is running as expected and to check the status of your Hel
  kubectl get hr labs-YourGithubUsername -n labs
  kubectl get pods -l app.kubernetes.io/name=labs-YourGithubUsername-nodejs -n labs
 ```
-
-### Configure Private DNS for Application
-
-You will need to add a couple of lines of config for the application to the sandbox private DNS config file.
-
-1. Open [sandbox-platform-hmcts-net.yml](https://github.com/hmcts/azure-private-dns/blob/master/environments/sandbox/sandbox-platform-hmcts-net.yml) in your browser.
-2. Click the pencil icon to edit the file in Github.
-3. Add configuration to the bottom of the file, see [example](https://github.com/hmcts/azure-private-dns/pull/326/files).
-4. Scroll down to the bottom to the 'Commit changes' section. Select `Create a new branch for this commit and start a pull request` and give your branch a name. Commit the file and create a pull request.
-5. To complete this section you will need your pull request to be approved, someone on your team should be able to do this. If you get stuck try asking in #platops-code-review on Slack. Once approved and the build has passed then merge your pull request. If you have a permissions issue then ask in #golden-path on Slack.
-6. Once your pull request has been merged, ensure the pipeline has run successfully and applied your changes in [Azure Devops](https://dev.azure.com/hmcts/CNP/_build?definitionId=321).
 
 ### Access application
 
