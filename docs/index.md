@@ -117,7 +117,7 @@ To confirm your change has been applied in the cluster, you can connect to the c
 To make sure your pod is running as expected and to check the status of your HelmRelease run the following commands (make sure to swap YourGithubUsername with your GitHub username):
 
 ```command
- kubectl get hr labs-YourGithubUsername -n labs
+ kubectl get hr labs-YourGithubUsername-nodejs -n labs
  kubectl get pods -l app.kubernetes.io/name=labs-YourGithubUsername-nodejs -n labs
 ```
 
