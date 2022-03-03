@@ -151,7 +151,7 @@ We are going to update the application by changing the text on the home page.
 [comment]: <> (As of March 2022)
 This is a new way of onboarding developers that we are trying out.
 If you could provide feedback it would really help us improve it for others.
-The [survey](https://forms.office.com/r/P2YbcLVAr4) has 4 questions and will only take you a couple of minutes to complete.
+The [survey](https://forms.office.com/r/P2YbcLVAr4) will only take you a couple of minutes to complete.
 
 If you've found a problem with the guide please [report an issue](https://github.com/hmcts/golden-path-java/issues) instead, or you can create a pull request to correct it yourself.
 
@@ -159,4 +159,4 @@ If you need help with the lab please reach out in [#golden-path](https://hmcts-r
 
 ## Troubleshooting
 
-See our [troubleshooting](https://hmcts.github.io/ways-of-working/troubleshooting/#troubleshooting-issues) guide.
+See our [troubleshooting](https://github.com/hmcts/golden-path-nodejs/issues) guide.
