@@ -128,7 +128,7 @@ If all went well, your application should be accessable now.
 The URL will be (update the GitHub username variable):
 
    ```text
-   http://labs-$yourGitHubUsername.sandbox.platform.hmcts.net
+   http://labs-$YourGitHubUsername-nodejs.sandbox.platform.hmcts.net
    ```  
 
 Open this in your browser, you should see:
