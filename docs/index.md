@@ -153,7 +153,7 @@ This is a new way of onboarding developers that we are trying out.
 If you could provide feedback it would really help us improve it for others.
 The [survey](https://forms.office.com/r/P2YbcLVAr4) will only take you a couple of minutes to complete.
 
-If you've found a problem with the guide please [report an issue](https://github.com/hmcts/golden-path-java/issues) instead, or you can create a pull request to correct it yourself.
+If you've found a problem with the guide please [report an issue](https://github.com/hmcts/golden-path-nodejs/issues) instead, or you can create a pull request to correct it yourself.
 
 If you need help with the lab please reach out in [#golden-path](https://hmcts-reform.slack.com/app_redirect?channel=golden-path).
 
