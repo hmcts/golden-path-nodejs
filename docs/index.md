@@ -132,7 +132,7 @@ The URL will be (update the GitHub username variable):
    ```  
 
 Open this in your browser, you should see:
-![Default Page Template](images/DefaultPageTemplate.png)
+![Default Page Template](../images/DefaultPageTemplate.png)
 
 ### Customise application
 
@@ -144,7 +144,7 @@ We are going to update the application by changing the text on the home page.
 4. Ask someone in your team to review your pull request and then merge it.
 5. Run the Jenkins pipeline against the master branch (this will trigger automatically on the production Jenkins instance).
 6. Reload your application in your browser and check it now shows your change to the heading:
-![Hello World](images/HelloWorld.png)
+![Hello World](../images/HelloWorld.png)
 
 ## Feedback
 
@@ -153,10 +153,10 @@ This is a new way of onboarding developers that we are trying out.
 If you could provide feedback it would really help us improve it for others.
 The [survey](https://forms.office.com/r/P2YbcLVAr4) will only take you a couple of minutes to complete.
 
-If you've found a problem with the guide please [report an issue](https://github.com/hmcts/golden-path-java/issues) instead, or you can create a pull request to correct it yourself.
+If you've found a problem with the guide please [report an issue](https://github.com/hmcts/golden-path-nodejs/issues) instead, or you can create a pull request to correct it yourself.
 
 If you need help with the lab please reach out in [#golden-path](https://hmcts-reform.slack.com/app_redirect?channel=golden-path).
 
 ## Troubleshooting
 
-See our [troubleshooting](https://github.com/hmcts/golden-path-nodejs/issues) guide.
+See our [troubleshooting](https://hmcts.github.io/ways-of-working/troubleshooting/#troubleshooting-issues) guide.
