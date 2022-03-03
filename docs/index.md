@@ -60,7 +60,7 @@ Any GitHub repository that starts with `labs-*` will be listed as part of this s
 
 ### Configure Public DNS for Application
 
-Configuring Public DNS allows your application to run without VPN access.
+Configuring Public DNS is required by Azure Front Door to prove that we own the domain.
 You will need to add a couple of lines of config for the application to the sandbox public DNS config file.
 
 1. Open [environments/sandbox.yml](https://github.com/hmcts/azure-public-dns/blob/master/environments/sandbox.yml) in your browser.
