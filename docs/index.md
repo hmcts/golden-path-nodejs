@@ -60,16 +60,29 @@ Any GitHub repository that starts with `labs-*` will be listed as part of this s
 
 ### Configure Public DNS for Application
 
+Configuring Public DNS is required by Azure Front Door to prove that we own the domain.
 You will need to add a couple of lines of config for the application to the sandbox public DNS config file.
 
 1. Open [environments/sandbox.yml](https://github.com/hmcts/azure-public-dns/blob/master/environments/sandbox.yml) in your browser.
 2. Click the pencil icon to edit the file in Github.
-3. Add configuration to the bottom of the file, see [example](https://github.com/hmcts/azure-public-dns/pull/716/files)
+3. Add configuration to the bottom of the file, see [example](https://github.com/hmcts/azure-public-dns/commit/a8d576744fe27bad7d4091f9d1866d1e13942976)
 4. Scroll down to the bottom to the 'Commit changes' section. Select `Create a new branch for this commit and start a pull request` and give your branch a name. Commit the file and create a pull request.
 5. To complete this section you will need your pull request to be approved, someone on your team should be able to do this. If you get stuck, try asking in #platops-code-review on Slack. Once approved and the checks have passed, merge your pull request. If you have a permissions issue, ask in the #golden-path Slack channel.
 6. Once your pull request has been merged, ensure the pipeline has run successfully and applied your changes in [Azure Devops](https://dev.azure.com/hmcts/PlatformOperations/_build?definitionId=278&_a=summary).
 
 Further reading on how we configure Public DNS can be found in [The HMCTS Way](https://hmcts.github.io/ways-of-working/path-to-live/public-dns.html#public-dns).
+
+### Configure Private DNS for Application
+
+Private DNS configuration allows for your application to be accessed over the VPN.
+You will need to add a couple of lines of config for the application to the sandbox private DNS config file.
+
+1. Open [sandbox-platform-hmcts-net.yml](https://github.com/hmcts/azure-private-dns/blob/master/environments/sandbox/sandbox-platform-hmcts-net.yml) in your browser.
+2. Click the pencil icon to edit the file in Github.
+3. Add configuration to the bottom of the file, see [example](https://github.com/hmcts/azure-private-dns/pull/326/files).
+4. Scroll down to the bottom to the 'Commit changes' section. Select `Create a new branch for this commit and start a pull request` and give your branch a name. Commit the file and create a pull request.
+5. To complete this section you will need your pull request to be approved, someone on your team should be able to do this. If you get stuck try asking in #platops-code-review on Slack. Once approved and the build has passed then merge your pull request. If you have a permissions issue then ask in #golden-path on Slack.
+6. Once your pull request has been merged, ensure the pipeline has run successfully and applied your changes in [Azure Devops](https://dev.azure.com/hmcts/CNP/_build?definitionId=321).
 
 ### Configure Front Door for Application
 
@@ -104,20 +117,9 @@ To confirm your change has been applied in the cluster, you can connect to the c
 To make sure your pod is running as expected and to check the status of your HelmRelease run the following commands (make sure to swap YourGithubUsername with your GitHub username):
 
 ```command
- kubectl get hr labs-YourGithubUsername -n labs
+ kubectl get hr labs-YourGithubUsername-nodejs -n labs
  kubectl get pods -l app.kubernetes.io/name=labs-YourGithubUsername-nodejs -n labs
 ```
-
-### Configure Private DNS for Application
-
-You will need to add a couple of lines of config for the application to the sandbox private DNS config file.
-
-1. Open [sandbox-platform-hmcts-net.yml](https://github.com/hmcts/azure-private-dns/blob/master/environments/sandbox/sandbox-platform-hmcts-net.yml) in your browser.
-2. Click the pencil icon to edit the file in Github.
-3. Add configuration to the bottom of the file, see [example](https://github.com/hmcts/azure-private-dns/pull/326/files)
-4. Scroll down to the bottom to the 'Commit changes' section. Select `Create a new branch for this commit and start a pull request` and give your branch a name. Commit the file and create a pull request.
-5. To complete this section you will need your pull request to be approved, someone on your team should be able to do this. If you get stuck try asking in #platops-code-review on Slack. Once approved and the build has passed then merge your pull request. If you have a permissions issue then ask in #golden-path on Slack.
-6. Once your pull request has been merged, ensure the pipeline has run successfully and applied your changes in [Azure Devops](https://dev.azure.com/hmcts/CNP/_build?definitionId=321)
 
 ### Access application
 
@@ -126,35 +128,34 @@ If all went well, your application should be accessable now.
 The URL will be (update the GitHub username variable):
 
    ```text
-   http://labs-$yourGitHubUsername.sandbox.platform.hmcts.net
+   http://labs-$YourGitHubUsername-nodejs.sandbox.platform.hmcts.net
    ```  
 
 Open this in your browser, you should see:
-![Default Page Template](/images/DefaultPageTemplate.png)
+![Default Page Template](../images/DefaultPageTemplate.png)
 
 ### Customise application
 
-We are going to update the application by changing the home page.
+We are going to update the application by changing the text on the home page.
 
-1. Open the 'home.njk' file inside the 'src/main/views'
-2. Edit the html heading to change the webpage's text
+1. Go to the Github repo you created at the beginning of this tutorial.
+2. Open the file 'home.njk' under 'src/main/views'.
+3. Edit the html heading to change the webpage's text, such as this [example](https://github.com/hmcts/labs-zcwalkthrough-nodejs/pull/3/files).
+4. Ask someone in your team to review your pull request and then merge it.
+5. Run the Jenkins pipeline against the master branch (this will trigger automatically on the production Jenkins instance).
+6. Reload your application in your browser and check it now shows your change to the heading:
+![Hello World](../images/HelloWorld.png)
 
-Before:
+## Feedback
 
-  ```yaml
-  <h1 class="govuk-heading-xl">Default Page Template</h1>
-   ```
+[comment]: <> (As of March 2022)
+This is a new way of onboarding developers that we are trying out.
+If you could provide feedback it would really help us improve it for others.
+The [survey](https://forms.office.com/r/P2YbcLVAr4) will only take you a couple of minutes to complete.
 
-After:
+If you've found a problem with the guide please [report an issue](https://github.com/hmcts/golden-path-nodejs/issues) instead, or you can create a pull request to correct it yourself.
 
-   ```yaml
-  <h1 class="govuk-heading-xl">Hello World!</h1>
-   ```
-
-3. Ask someone in your team to review your pull request and then merge it.
-4. Run the Jenkins pipeline against the master branch (this will trigger automatically on the production Jenkins instance).
-5. Reload your application in your browser and check it now shows your change to the heading:
-![Hello World](/images/HelloWorld.png)
+If you need help with the lab please reach out in [#golden-path](https://hmcts-reform.slack.com/app_redirect?channel=golden-path).
 
 ## Troubleshooting
 
