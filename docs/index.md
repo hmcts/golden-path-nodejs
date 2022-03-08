@@ -132,7 +132,7 @@ The URL will be (update the GitHub username variable):
    ```  
 
 Open this in your browser, you should see:
-![Default Page Template](../images/DefaultPageTemplate.png)
+![Default Page Template](/images/DefaultPageTemplate.png)
 
 ### Customise application
 
@@ -148,7 +148,7 @@ We are going to update the application by changing the text on the home page.
 8. Ask someone in your team to review your pull request and then merge it.
 9. Run the Jenkins pipeline against the master branch (this will trigger automatically on the production Jenkins instance).
 10. Reload your application in your browser and check it now shows your change to the heading:
-![Hello World](../images/HelloWorld.png)
+![Hello World](/images/HelloWorld.png)
 
 ## Feedback
 
