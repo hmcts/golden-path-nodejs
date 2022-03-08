@@ -65,7 +65,7 @@ You will need to add a couple of lines of config for the application to the sand
 
 1. Open [environments/sandbox.yml](https://github.com/hmcts/azure-public-dns/blob/master/environments/sandbox.yml) in your browser.
 2. Click the pencil icon to edit the file in Github.
-3. Add configuration to the bottom of the file, see [example](https://github.com/hmcts/azure-public-dns/commit/a8d576744fe27bad7d4091f9d1866d1e13942976)
+3. Add configuration to the bottom of the file, see [example](https://github.com/hmcts/azure-public-dns/pull/772/files)
 4. Scroll down to the bottom to the 'Commit changes' section. Select `Create a new branch for this commit and start a pull request` and give your branch a name. Commit the file and create a pull request.
 5. To complete this section you will need your pull request to be approved, someone on your team should be able to do this. If you get stuck, try asking in #platops-code-review on Slack. Once approved and the checks have passed, merge your pull request. If you have a permissions issue, ask in the #golden-path Slack channel.
 6. Once your pull request has been merged, ensure the pipeline has run successfully and applied your changes in [Azure Devops](https://dev.azure.com/hmcts/PlatformOperations/_build?definitionId=278&_a=summary).
