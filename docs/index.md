@@ -139,11 +139,11 @@ We are going to update the application by changing the text on the home page.
 
 1. Go to the Github repo you created at the beginning of this tutorial.
 2. Open the file 'home.njk' under 'src/main/views'.
-3. Edit the html heading to change the webpage's text, such as this [example](https://github.com/hmcts/labs-louisehuyton-walkthrough/pull/18/files#diff-45cc7cbeb4ac906e47fb757e74743b605164c1ce2ac0a9771e199fa468083249R5).
+3. Edit the html heading to change the webpage's text.
 4. Open the file 'smoke.ts' under 'src/test/smoke'.
-5. Edit the smoke test to reference the change to the page heading, such as this [example](https://github.com/hmcts/labs-louisehuyton-walkthrough/pull/18/files#diff-04dcf955fe392902a64425053ee0563fb5d2f3cfda89f9af476a6036f85c60fdR17).
+5. Edit the smoke test to reference the change to the page heading.
 6. Open the file 'hello-world.feature' under 'src/test/functional/features'.
-7. Edit the functional test to reference the change to the page heading, such as this [example](https://github.com/hmcts/labs-louisehuyton-walkthrough/pull/18/files#diff-6293326ead760684d078478d79b48fb0991be199bf5dabb6d0ea036b09c26466R5).
+7. Edit the functional test to reference the change to the page heading.
 8. Ask someone in your team to review your pull request and then merge it.
 9. Run the Jenkins pipeline against the master branch (this will trigger automatically on the production Jenkins instance).
 10. Reload your application in your browser and check it now shows your change to the heading:
