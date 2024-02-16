@@ -8,8 +8,8 @@ At the end of this tutorial, you will be able to access your application via the
 
 Before starting this tutorial, make sure you have:
 
-- An account on HMCTS Azure AD. See the [onboarding guide](https://hmcts.github.io/onboarding/person/#azure-ad-groups) to get set up.
-- Access to the HMCTS GitHub organisation. See the [onboarding guide](https://hmcts.github.io/onboarding/team/github.html#github) to get setup.
+- An account on HMCTS Azure AD. See the [onboarding guide](https://hmcts.github.io/cloud-native-platform/onboarding/person/index.html#microsoft-entra-id-groups) to get set up.
+- Access to the HMCTS GitHub organisation. See the [onboarding guide](https://hmcts.github.io/cloud-native-platform/onboarding/team/github.html#github) to get setup.
 - (Recommended) Join the below Slack channels
   - [#golden-path](https://hmcts-reform.slack.com/app_redirect?channel=golden-path) is for community discussion about the tutorials.
   - [#labs-build-notices](https://hmcts-reform.slack.com/app_redirect?channel=labs-build-notices) Jenkins build notices channel.
@@ -69,7 +69,7 @@ You will need to add a couple of lines of config for the application to the sand
 5. To complete this section you will need your pull request to be approved, someone on your team should be able to do this. If you get stuck, try asking in #platops-code-review on Slack. Once approved and the checks have passed, merge your pull request. If you have a permissions issue, ask in the #golden-path Slack channel.
 6. Once your pull request has been merged, ensure the pipeline has run successfully and applied your changes in [Azure Devops](https://dev.azure.com/hmcts/PlatformOperations/_build?definitionId=278&_a=summary).
 
-Further reading on how we configure Public DNS can be found in [The HMCTS Way](https://hmcts.github.io/ways-of-working/path-to-live/public-dns.html#public-dns).
+Further reading on how we configure Public DNS can be found in [The HMCTS Way](https://hmcts.github.io/cloud-native-platform/path-to-live/public-dns.html#public-dns).
 
 ### Configure Private DNS for Application
 
@@ -81,7 +81,7 @@ You will need to add a couple of lines of config for the application to the sand
 3. Add configuration to the bottom of the file, see [example](https://github.com/hmcts/azure-private-dns/pull/326/files).
 4. Scroll down to the bottom to the 'Commit changes' section. Select `Create a new branch for this commit and start a pull request` and give your branch a name. Commit the file and create a pull request.
 5. To complete this section you will need your pull request to be approved, someone on your team should be able to do this. If you get stuck try asking in #platops-code-review on Slack. Once approved and the build has passed then merge your pull request. If you have a permissions issue then ask in #golden-path on Slack.
-6. Once your pull request has been merged, ensure the pipeline has run successfully and applied your changes in [Azure Devops](https://dev.azure.com/hmcts/CNP/_build?definitionId=321).
+6. Once your pull request has been merged, ensure the pipeline has run successfully and applied your changes in [Azure Devops](https://dev.azure.com/hmcts/PlatformOperations/_build?definitionId=775&_a=summary).
 
 ### Configure Front Door for Application
 
@@ -93,11 +93,11 @@ You will need to add a couple of lines of config for the application to the sand
 4. Scroll down to the bottom to the 'Commit changes' section. Select `Create a new branch for this commit and start a pull request` and give your branch a name. Commit the file and create a pull request.
 5. To complete this section you will need your pull request to be approved, someone on your team should be able to do this. If you get stuck, try asking in #platops-code-review on Slack. Once approved and the build has passed then merge your pull request. If you have a permissions issue then ask in #golden-path on Slack.
 
-More information on how we configure Azure Front Door can be found in [The HMCTS Way](https://hmcts.github.io/ways-of-working/path-to-live/front-door.html#purpose).
+More information on how we configure Azure Front Door can be found in [The HMCTS Way](https://hmcts.github.io/cloud-native-platform/path-to-live/front-door.html#purpose).
 
 ### Deploy application
 
-We use [GitOps](https://www.weave.works/technologies/gitops/) principles for application deployment to Kubernetes.
+We use [GitOps](https://docs.gitops.weave.works/) principles for application deployment to Kubernetes.
 
 Your application will be deployed in the `labs` Kubernetes namespace which has already been created.
 
@@ -139,11 +139,11 @@ We are going to update the application by changing the text on the home page.
 
 1. Go to the Github repo you created at the beginning of this tutorial.
 2. Open the file 'home.njk' under 'src/main/views'.
-3. Edit the html heading to change the webpage's text, such as this [example](https://github.com/hmcts/labs-louisehuyton-walkthrough/pull/18/files#diff-45cc7cbeb4ac906e47fb757e74743b605164c1ce2ac0a9771e199fa468083249R5).
+3. Edit the html heading to change the webpage's text.
 4. Open the file 'smoke.ts' under 'src/test/smoke'.
-5. Edit the smoke test to reference the change to the page heading, such as this [example](https://github.com/hmcts/labs-louisehuyton-walkthrough/pull/18/files#diff-04dcf955fe392902a64425053ee0563fb5d2f3cfda89f9af476a6036f85c60fdR17).
+5. Edit the smoke test to reference the change to the page heading.
 6. Open the file 'hello-world.feature' under 'src/test/functional/features'.
-7. Edit the functional test to reference the change to the page heading, such as this [example](https://github.com/hmcts/labs-louisehuyton-walkthrough/pull/18/files#diff-6293326ead760684d078478d79b48fb0991be199bf5dabb6d0ea036b09c26466R5).
+7. Edit the functional test to reference the change to the page heading.
 8. Ask someone in your team to review your pull request and then merge it.
 9. Run the Jenkins pipeline against the master branch (this will trigger automatically on the production Jenkins instance).
 10. Reload your application in your browser and check it now shows your change to the heading:
@@ -162,4 +162,4 @@ If you need help with the lab please reach out in [#golden-path](https://hmcts-r
 
 ## Troubleshooting
 
-See our [troubleshooting](https://hmcts.github.io/ways-of-working/troubleshooting/#troubleshooting-issues) guide.
+See our [troubleshooting](https://hmcts.github.io/cloud-native-platform/troubleshooting/#troubleshooting-issues) guide.
