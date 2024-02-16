@@ -162,4 +162,4 @@ If you need help with the lab please reach out in [#golden-path](https://hmcts-r
 
 ## Troubleshooting
 
-See our [troubleshooting](https://hmcts.github.io/ways-of-working/troubleshooting/#troubleshooting-issues) guide.
+See our [troubleshooting](https://hmcts.github.io/cloud-native-platform/troubleshooting/#troubleshooting-issues) guide.
