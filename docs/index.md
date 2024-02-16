@@ -8,8 +8,8 @@ At the end of this tutorial, you will be able to access your application via the
 
 Before starting this tutorial, make sure you have:
 
-- An account on HMCTS Azure AD. See the [onboarding guide](https://hmcts.github.io/onboarding/person/#azure-ad-groups) to get set up.
-- Access to the HMCTS GitHub organisation. See the [onboarding guide](https://hmcts.github.io/onboarding/team/github.html#github) to get setup.
+- An account on HMCTS Azure AD. See the [onboarding guide](https://hmcts.github.io/cloud-native-platform/onboarding/person/index.html#microsoft-entra-id-groups) to get set up.
+- Access to the HMCTS GitHub organisation. See the [onboarding guide](https://hmcts.github.io/cloud-native-platform/onboarding/team/github.html#github) to get setup.
 - (Recommended) Join the below Slack channels
   - [#golden-path](https://hmcts-reform.slack.com/app_redirect?channel=golden-path) is for community discussion about the tutorials.
   - [#labs-build-notices](https://hmcts-reform.slack.com/app_redirect?channel=labs-build-notices) Jenkins build notices channel.
@@ -69,7 +69,7 @@ You will need to add a couple of lines of config for the application to the sand
 5. To complete this section you will need your pull request to be approved, someone on your team should be able to do this. If you get stuck, try asking in #platops-code-review on Slack. Once approved and the checks have passed, merge your pull request. If you have a permissions issue, ask in the #golden-path Slack channel.
 6. Once your pull request has been merged, ensure the pipeline has run successfully and applied your changes in [Azure Devops](https://dev.azure.com/hmcts/PlatformOperations/_build?definitionId=278&_a=summary).
 
-Further reading on how we configure Public DNS can be found in [The HMCTS Way](https://hmcts.github.io/ways-of-working/path-to-live/public-dns.html#public-dns).
+Further reading on how we configure Public DNS can be found in [The HMCTS Way](https://hmcts.github.io/cloud-native-platform/path-to-live/public-dns.html#public-dns).
 
 ### Configure Private DNS for Application
 
@@ -93,7 +93,7 @@ You will need to add a couple of lines of config for the application to the sand
 4. Scroll down to the bottom to the 'Commit changes' section. Select `Create a new branch for this commit and start a pull request` and give your branch a name. Commit the file and create a pull request.
 5. To complete this section you will need your pull request to be approved, someone on your team should be able to do this. If you get stuck, try asking in #platops-code-review on Slack. Once approved and the build has passed then merge your pull request. If you have a permissions issue then ask in #golden-path on Slack.
 
-More information on how we configure Azure Front Door can be found in [The HMCTS Way](https://hmcts.github.io/ways-of-working/path-to-live/front-door.html#purpose).
+More information on how we configure Azure Front Door can be found in [The HMCTS Way](https://hmcts.github.io/cloud-native-platform/path-to-live/front-door.html#purpose).
 
 ### Deploy application
 
