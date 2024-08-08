@@ -62,7 +62,7 @@ Logs can be monitored under `Scan Organization Log`.
 Configuring Public DNS is required by Azure Front Door to prove that we own the domain.
 You will need to add a couple of lines of config for the application to the sandbox public DNS config file.
 
-1. Open [environments/sandbox.yml](https://github.com/hmcts/azure-public-dns/blob/master/environments/sandbox.yml) in your browser.
+1. Open [environments/sandbox.yml](https://github.com/hmcts/azure-public-dns/blob/master/environments/sandbox/sandbox.yml) in your browser.
 2. Click the pencil icon to edit the file in Github.
 3. Add configuration to the bottom of the file, see [example](https://github.com/hmcts/azure-public-dns/pull/772/files)
 4. Scroll down to the bottom to the 'Commit changes' section. Select `Create a new branch for this commit and start a pull request` and give your branch a name. Commit the file and create a pull request.
