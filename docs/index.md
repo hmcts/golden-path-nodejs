@@ -102,7 +102,7 @@ More information on how we configure Azure Front Door can be found in [The HMCTS
 ### Configure Azure Firewall for Application
 
 1. Checkout the [hub-terraform-infra](https://github.com/hmcts/hub-terraform-infra) repo
-2, Navigate to the file [path](https://github.com/hmcts/hub-terraform-infra/blob/master/environments/hub_infra-sbox-int.tfvars)
+2. Navigate to the file [path](https://github.com/hmcts/hub-terraform-infra/blob/master/environments/hub_infra-sbox-int.tfvars)
 3. Click the pencil icon to edit the file in GitHub.
 4. Add the below snippet to the `public_lb_config`
 
