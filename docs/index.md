@@ -113,11 +113,7 @@ More information on how we configure Azure Front Door can be found in [The HMCTS
     }
     ```
 
-5. Add the below snippet to the `aks_config` and remember to put a comma after the previous entry.
-
-  Remember to increment the index to the next available, otherwise the pipeline will fail on apply.
-
-  You can get the IP of the frontend app gateway from [here](https://github.com/hmcts/azure-platform-terraform/blob/6f0b867e75b7e9cee9e7adc87084f6911eb5373d/environments/sbox/sbox.tfvars#L20).
+5. Add the below snippet to the `aks_config` and remember to put a comma after the previous entry and increment the index to the next available, otherwise the pipeline will fail on apply. You can get the IP of the frontend app gateway from [here](https://github.com/hmcts/azure-platform-terraform/blob/6f0b867e75b7e9cee9e7adc87084f6911eb5373d/environments/sbox/sbox.tfvars#L20).
 
     ```
     {
