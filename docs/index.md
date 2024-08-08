@@ -14,6 +14,10 @@ Before starting this tutorial, make sure you have:
   - [#golden-path](https://hmcts-reform.slack.com/app_redirect?channel=golden-path) is for community discussion about the tutorials.
   - [#labs-build-notices](https://hmcts-reform.slack.com/app_redirect?channel=labs-build-notices) Jenkins build notices channel.
   - [#platops-help](https://hmcts-reform.slack.com/app_redirect?channel=platops-help) is for raising support requests to the `Platform Operations` team.
+ 
+## Troubleshooting
+
+If you run into any issues while running through the steps below, please see our [troubleshooting](https://hmcts.github.io/cloud-native-platform/troubleshooting/#troubleshooting-issues) guide for information on how to resolve any issues you may encounter.
 
 ## Steps
 
@@ -160,6 +164,4 @@ If you've found a problem with the guide please [report an issue](https://github
 
 If you need help with the lab please reach out in [#golden-path](https://hmcts-reform.slack.com/app_redirect?channel=golden-path).
 
-## Troubleshooting
-
-See our [troubleshooting](https://hmcts.github.io/cloud-native-platform/troubleshooting/#troubleshooting-issues) guide.
+If you notice an error in this documentation, please raise a pull request in the [GitHub repo](https://github.com/hmcts/golden-path-nodejs/docs/index.md) with the necessary updates.
