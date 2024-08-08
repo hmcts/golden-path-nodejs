@@ -106,53 +106,31 @@ More information on how we configure Azure Front Door can be found in [The HMCTS
 3. Click the pencil icon to edit the file in GitHub.
 4. Add the below snippet to the `public_lb_config`:
 
-  ```
-  {
-    name  = "labs-YourGitHubUsername-nodejs"
-    ports = [80]
-  }
-  ```
-
-Remember to put a comma after the previous entry so the final commit looks like this:
-
-  ```
-  public_lb_config = [
-    {
-      name  = "labs-OtherPersonsGithubusername-nodejs"
-      ports = [80]
-    },
+    ```
     {
       name  = "labs-YourGitHubUsername-nodejs"
       ports = [80]
     }
-  ]
-  ```
+    ```
+  
+  Remember to put a comma after the previous entry so the final commit looks like this:
+  
+    ```
+    public_lb_config = [
+      {
+        name  = "labs-OtherPersonsGithubusername-nodejs"
+        ports = [80]
+      },
+      {
+        name  = "labs-YourGitHubUsername-nodejs"
+        ports = [80]
+      }
+    ]
+    ```
 
 5. Add the below snippet to the `aks_config`
 
-  ```
-  {
-    name : "labs-YourGitHubUsername-nodejs",
-    palo_ips : {
-      "uksouth" : "<IP of the frontend app gateway>",
-    },
-    port : [80, ]
-    index : 9
-  }
-  ```
-
-Remember to put a comma after the previous entry so the final commit looks like this:
-
-  ```
-  aks_config = [
-    {
-      name : "labs-OtherPersonsGithubusername-nodejs",
-      palo_ips : {
-        "uksouth" : "<IP of the frontend app gateway>",
-      },
-      port : [80, ]
-      index : 8
-    },
+    ```
     {
       name : "labs-YourGitHubUsername-nodejs",
       palo_ips : {
@@ -161,12 +139,34 @@ Remember to put a comma after the previous entry so the final commit looks like 
       port : [80, ]
       index : 9
     }
-  ]
-  ```
+    ```
+  
+  Remember to put a comma after the previous entry so the final commit looks like this:
+  
+    ```
+    aks_config = [
+      {
+        name : "labs-OtherPersonsGithubusername-nodejs",
+        palo_ips : {
+          "uksouth" : "<IP of the frontend app gateway>",
+        },
+        port : [80, ]
+        index : 8
+      },
+      {
+        name : "labs-YourGitHubUsername-nodejs",
+        palo_ips : {
+          "uksouth" : "<IP of the frontend app gateway>",
+        },
+        port : [80, ]
+        index : 9
+      }
+    ]
+    ```
 
-**Remember to increment the index to the next available, otherwise the pipeline will fail on apply**
+  **Remember to increment the index to the next available, otherwise the pipeline will fail on apply**
 
-You can get the IP of the frontend app gateway from [here](https://github.com/hmcts/azure-platform-terraform/blob/6f0b867e75b7e9cee9e7adc87084f6911eb5373d/environments/sbox/sbox.tfvars#L20).
+  You can get the IP of the frontend app gateway from [here](https://github.com/hmcts/azure-platform-terraform/blob/6f0b867e75b7e9cee9e7adc87084f6911eb5373d/environments/sbox/sbox.tfvars#L20).
 
 6. Scroll down to the bottom to the 'Commit changes' section. Select `Create a new branch for this commit and start a pull request` and give your branch a name. Commit the file and create a pull request.
 7. To complete this section you will need your pull request to be approved, someone on your team should be able to do this. If you get stuck, try asking in #platops-code-review on Slack. Once approved and the build has passed then merge your pull request. If you have a permissions issue then ask in #golden-path on Slack.
