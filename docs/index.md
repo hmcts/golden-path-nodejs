@@ -101,13 +101,26 @@ More information on how we configure Azure Front Door can be found in [The HMCTS
 
 ### Configure Azure Firewall for Application
 
-1. Checkout the [hub-terraform-infra](https://github.com/hmcts/hub-terraform-infra) repo
-2. Navigate to the file [path](https://github.com/hmcts/hub-terraform-infra/blob/master/environments/hub_infra-sbox-int.tfvars)
+1. Checkout the [hub-terraform-infra](https://github.com/hmcts/hub-terraform-infra) repo.
+2. Navigate to the file [path](https://github.com/hmcts/hub-terraform-infra/blob/master/environments/hub_infra-sbox-int.tfvars).
 3. Click the pencil icon to edit the file in GitHub.
-4. Add the below snippet to the `public_lb_config`
+4. Add the below snippet to the `public_lb_config`:
+
+  ```
+  {
+    name  = "labs-YourGitHubUsername-nodejs"
+    ports = [80]
+  }
+  ```
+
+Remember to put a comma after the previous entry so the final commit looks like this:
 
   ```
   public_lb_config = [
+    {
+      name  = "labs-OtherPersonsGithubusername-nodejs"
+      ports = [80]
+    },
     {
       name  = "labs-YourGitHubUsername-nodejs"
       ports = [80]
@@ -118,7 +131,28 @@ More information on how we configure Azure Front Door can be found in [The HMCTS
 5. Add the below snippet to the `aks_config`
 
   ```
+  {
+    name : "labs-YourGitHubUsername-nodejs",
+    palo_ips : {
+      "uksouth" : "<IP of the frontend app gateway>",
+    },
+    port : [80, ]
+    index : 9
+  }
+  ```
+
+Remember to put a comma after the previous entry so the final commit looks like this:
+
+  ```
   aks_config = [
+    {
+      name : "labs-OtherPersonsGithubusername-nodejs",
+      palo_ips : {
+        "uksouth" : "<IP of the frontend app gateway>",
+      },
+      port : [80, ]
+      index : 8
+    },
     {
       name : "labs-YourGitHubUsername-nodejs",
       palo_ips : {
