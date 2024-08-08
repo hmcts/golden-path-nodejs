@@ -14,6 +14,10 @@ Before starting this tutorial, make sure you have:
   - [#golden-path](https://hmcts-reform.slack.com/app_redirect?channel=golden-path) is for community discussion about the tutorials.
   - [#labs-build-notices](https://hmcts-reform.slack.com/app_redirect?channel=labs-build-notices) Jenkins build notices channel.
   - [#platops-help](https://hmcts-reform.slack.com/app_redirect?channel=platops-help) is for raising support requests to the `Platform Operations` team.
+ 
+## Troubleshooting
+
+If you run into any issues while running through the steps below, please see our [troubleshooting](https://hmcts.github.io/cloud-native-platform/troubleshooting/#troubleshooting-issues) guide for information on how to resolve any issues you may encounter.
 
 ## Steps
 
@@ -62,7 +66,7 @@ Logs can be monitored under `Scan Organization Log`.
 Configuring Public DNS is required by Azure Front Door to prove that we own the domain.
 You will need to add a couple of lines of config for the application to the sandbox public DNS config file.
 
-1. Open [environments/sandbox.yml](https://github.com/hmcts/azure-public-dns/blob/master/environments/sandbox.yml) in your browser.
+1. Open [environments/sandbox.yml](https://github.com/hmcts/azure-public-dns/blob/master/environments/sandbox/sandbox.yml) in your browser.
 2. Click the pencil icon to edit the file in Github.
 3. Add configuration to the bottom of the file, see [example](https://github.com/hmcts/azure-public-dns/pull/772/files)
 4. Scroll down to the bottom to the 'Commit changes' section. Select `Create a new branch for this commit and start a pull request` and give your branch a name. Commit the file and create a pull request.
@@ -94,6 +98,36 @@ You will need to add a couple of lines of config for the application to the sand
 5. To complete this section you will need your pull request to be approved, someone on your team should be able to do this. If you get stuck, try asking in #platops-code-review on Slack. Once approved and the build has passed then merge your pull request. If you have a permissions issue then ask in #golden-path on Slack.
 
 More information on how we configure Azure Front Door can be found in [The HMCTS Way](https://hmcts.github.io/cloud-native-platform/path-to-live/front-door.html#purpose).
+
+### Configure Azure Firewall for Application
+
+1. Checkout the [hub-terraform-infra](https://github.com/hmcts/hub-terraform-infra) repo.
+2. Navigate to the file [path](https://github.com/hmcts/hub-terraform-infra/blob/master/environments/hub_infra-sbox-int.tfvars).
+3. Click the pencil icon to edit the file in GitHub.
+4. Add the below snippet to the `public_lb_config` and remember to put a comma after the previous entry.
+
+    ```
+    {
+      name  = "labs-YourGitHubUsername-nodejs"
+      ports = [80]
+    }
+    ```
+
+5. Add the below snippet to the `aks_config` and remember to put a comma after the previous entry and increment the index to the next available, otherwise the pipeline will fail on apply. You can get the IP of the frontend app gateway from [here](https://github.com/hmcts/azure-platform-terraform/blob/6f0b867e75b7e9cee9e7adc87084f6911eb5373d/environments/sbox/sbox.tfvars#L20).
+
+    ```
+    {
+      name : "labs-YourGitHubUsername-nodejs",
+      palo_ips : {
+        "uksouth" : "<IP of the frontend app gateway>",
+      },
+      port : [80, ]
+      index : 9
+    }
+    ```
+
+6. Scroll down to the bottom to the 'Commit changes' section. Select `Create a new branch for this commit and start a pull request` and give your branch a name. Commit the file and create a pull request.
+7. To complete this section you will need your pull request to be approved, someone on your team should be able to do this. If you get stuck, try asking in #platops-code-review on Slack. Once approved and the build has passed then merge your pull request. If you have a permissions issue then ask in #golden-path on Slack.
 
 ### Deploy application
 
@@ -160,6 +194,4 @@ If you've found a problem with the guide please [report an issue](https://github
 
 If you need help with the lab please reach out in [#golden-path](https://hmcts-reform.slack.com/app_redirect?channel=golden-path).
 
-## Troubleshooting
-
-See our [troubleshooting](https://hmcts.github.io/cloud-native-platform/troubleshooting/#troubleshooting-issues) guide.
+If you notice an error in this documentation, please raise a pull request in the [GitHub repo](https://github.com/hmcts/golden-path-nodejs/docs/index.md) with the necessary updates.
