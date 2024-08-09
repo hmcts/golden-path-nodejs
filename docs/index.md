@@ -68,7 +68,7 @@ You will need to add a couple of lines of config for the application to the sand
 
 1. Open [environments/sandbox.yml](https://github.com/hmcts/azure-public-dns/blob/master/environments/sandbox/sandbox.yml) in your browser.
 2. Click the pencil icon to edit the file in Github.
-3. Add configuration to the bottom of the file, see [example](https://github.com/hmcts/azure-public-dns/pull/772/files)
+3. Add configuration to the bottom of the file, see [example](https://github.com/hmcts/azure-public-dns/pull/1829/files). You can also find the hostname of the Front Door by searching for `hmcts-sbox` in the Azure Portal, in case it has changed.
 4. Scroll down to the bottom to the 'Commit changes' section. Select `Create a new branch for this commit and start a pull request` and give your branch a name. Commit the file and create a pull request.
 5. To complete this section you will need your pull request to be approved, someone on your team should be able to do this. If you get stuck, try asking in #platops-code-review on Slack. Once approved and the checks have passed, merge your pull request. If you have a permissions issue, ask in the #golden-path Slack channel.
 6. Once your pull request has been merged, ensure the pipeline has run successfully and applied your changes in [Azure Devops](https://dev.azure.com/hmcts/PlatformOperations/_build?definitionId=278&_a=summary).
@@ -82,7 +82,7 @@ You will need to add a couple of lines of config for the application to the sand
 
 1. Open [sandbox-platform-hmcts-net.yml](https://github.com/hmcts/azure-private-dns/blob/master/environments/sandbox/sandbox-platform-hmcts-net.yml) in your browser.
 2. Click the pencil icon to edit the file in Github.
-3. Add configuration to the bottom of the file, see [example](https://github.com/hmcts/azure-private-dns/pull/326/files).
+3. Add configuration to the bottom of the file, see [example](https://github.com/hmcts/azure-private-dns/pull/822/files).
 4. Scroll down to the bottom to the 'Commit changes' section. Select `Create a new branch for this commit and start a pull request` and give your branch a name. Commit the file and create a pull request.
 5. To complete this section you will need your pull request to be approved, someone on your team should be able to do this. If you get stuck try asking in #platops-code-review on Slack. Once approved and the build has passed then merge your pull request. If you have a permissions issue then ask in #golden-path on Slack.
 6. Once your pull request has been merged, ensure the pipeline has run successfully and applied your changes in [Azure Devops](https://dev.azure.com/hmcts/PlatformOperations/_build?definitionId=775&_a=summary).
@@ -93,7 +93,7 @@ You will need to add a couple of lines of config for the application to the sand
 
 1. Open [sbox/sbox.tfvars](https://github.com/hmcts/azure-platform-terraform/blob/master/environments/sbox/sbox.tfvars) in your browser.
 2. Click the pencil icon to edit the file in GitHub.
-3. Add configuration to the bottom of the file, see [example](https://github.com/hmcts/azure-platform-terraform/blob/acb0c544127d136c14f0f1d15ba24f79132a9b60/environments/sbox/sbox.tfvars#L395-L401)
+3. Add configuration to the bottom of the file, see [example](https://github.com/hmcts/azure-platform-terraform/pull/2229/files)
 4. Scroll down to the bottom to the 'Commit changes' section. Select `Create a new branch for this commit and start a pull request` and give your branch a name. Commit the file and create a pull request.
 5. To complete this section you will need your pull request to be approved, someone on your team should be able to do this. If you get stuck, try asking in #platops-code-review on Slack. Once approved and the build has passed then merge your pull request. If you have a permissions issue then ask in #golden-path on Slack.
 
