@@ -195,6 +195,9 @@ We are going to update the application by changing the text on the home page.
 10. Reload your application in your browser and check it now shows your change to the heading:
 ![Hello World](images/HelloWorld.png)
 
+If you are having any issues you might want to confirm that the Flux has picked up your new image by [checking for the commit related to your application in the cnp-flux-config repository](https://github.com/hmcts/cnp-flux-config/commits/master/).
+Keep in mind that new changes are commited very frequently in this repository so if you made the change long time ago you might need to scroll through a lot of commits.
+
 ## Feedback
 
 [comment]: <> (As of March 2022)
