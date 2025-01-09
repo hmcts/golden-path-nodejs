@@ -147,7 +147,7 @@ To confirm your change has been applied in the cluster, you can connect to the c
  az aks get-credentials --resource-group cft-sbox-00-rg --name cft-sbox-00-aks --subscription DCD-CFTAPPS-SBOX --overwrite-existing
 ```
 
-To make sure your pod is running as expected and to check the status of your HelmRelease run the following command (make sure to swap YourGithubUsername with your GitHub username):
+To make sure your pod is running as expected and to check the status of your HelmRelease run the following commands (make sure to swap YourGithubUsername with your GitHub username):
 
 ```command
 kubectl get hr labs-YourGithubUsername-nodejs -n labs
