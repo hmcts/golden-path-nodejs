@@ -138,7 +138,7 @@ Your application will be deployed in the `labs` Kubernetes namespace which has a
 For the benefit of of this tutorial we have created a separate [guide](https://github.com/hmcts/cnp-flux-config/blob/master/labs/README.md#creating-the-flux-config-for-your-lab-application) to help you create the flux config needed to deploy your lab application with Flux and to enable Flux to automate updating image tags to the latest version of your image.
 It's also worth taking a look at the app deployment [guide](https://github.com/hmcts/cnp-flux-config/blob/master/docs/app-deployment-v2.md#application) in the cnp-flux-config repo to understand how you would do this normally.
 
-A couple of minutes after your pull request has been merged, you should see your HelmRelease resource deployed and your application's image tag updated to the latest version with the `prod-xxxxxxx-xxxxxxxxxxxxxx` naming convention.
+A couple of minutes after your pull request has been merged, you should see your HelmRelease resource deployed and your application's image tag updated to the latest version with the `prod-xxxxxxx-xxxxxxxxxxxxxx` naming convention. If this version number hasn't been updated, there may be issues in your Jenkins run from earlier (i.e. you should never have to manually add this version number on).
 
 To confirm your change has been applied in the cluster, you can connect to the cluster by running the commands below:
 
