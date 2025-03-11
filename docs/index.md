@@ -194,4 +194,4 @@ If you've found a problem with the guide please [report an issue](https://github
 
 If you need help with the lab please reach out in [#golden-path](https://hmcts-reform.slack.com/app_redirect?channel=golden-path).
 
-If you notice an error in this documentation, please raise a pull request in the [GitHub repo](https://github.com/hmcts/golden-path-nodejs/docs/index.md) with the necessary updates.
+If you notice an error in this documentation, please raise a pull request in the [GitHub repo](https://github.com/hmcts/golden-path-nodejs/blob/master/docs/index.md) with the necessary updates.
