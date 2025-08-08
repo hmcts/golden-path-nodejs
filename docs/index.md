@@ -135,6 +135,31 @@ We use [GitOps](https://docs.gitops.weave.works/) principles for application dep
 
 Your application will be deployed in the `labs` Kubernetes namespace which has already been created.
 
+Before we deploy the application - We need to get the application's image. The image is built from your lab Node.js repository: `labs-<your-hmcts-github-user-id>-nodejs`.
+
+If your Jenkins build fails due to Node.js vulnerabilities, you will need to resolve them:
+
+1. Clone repo: `labs-<your-hmcts-github-user-id>-nodejs`.
+2. Navigate to your repository directory:
+   ```
+   cd labs-<your-hmcts-github-user-id>-nodejs
+   ```
+3. Install Node.js and Yarn if not already installed:
+   ```
+   brew install node
+   brew install yarn
+   ```
+4. Run the following command to audit and record known issues:
+   ```
+   yarn npm audit --recursive --environment production --json > yarn-audit-known-issues
+   ```
+5. Commit and push the changes to the `master` branch.
+
+After pushing, check the Jenkins pipeline [sandbox Jenkins](https://sandbox-build.hmcts.net/job/HMCTS_j_to_z_Sandbox/job/labs-<your-hmcts-github-user-id>-nodejs/). In the console output, look for the image tag in the format:
+`labs/<your-hmcts-github-user-id>-nodejs:prod-xxxxxxx-xxxxxxxxxxxxxx`
+Make a note of this image tag. You will need to update the image reference in:
+`apps/labs/<your-hmcts-github-user-id>/<your-hmcts-github-user-id>.yaml`
+
 For the benefit of of this tutorial we have created a separate [guide](https://github.com/hmcts/cnp-flux-config/blob/master/labs/README.md#creating-the-flux-config-for-your-lab-application) to help you create the flux config needed to deploy your lab application with Flux and to enable Flux to automate updating image tags to the latest version of your image.
 It's also worth taking a look at the app deployment [guide](https://github.com/hmcts/cnp-flux-config/blob/master/docs/app-deployment-v2.md#application) in the cnp-flux-config repo to understand how you would do this normally.
 
