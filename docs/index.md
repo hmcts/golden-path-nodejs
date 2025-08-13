@@ -137,7 +137,7 @@ Your application will be deployed in the `labs` Kubernetes namespace which has a
 
 Before we deploy the application - We need to get the application's image. The image is built from your lab Node.js repository: `labs-<your-hmcts-github-user-id>-nodejs`.
 
-If your Jenkins build fails due to Node.js vulnerabilities, you will need to resolve them:
+There are known Node.js vulnerabilities which may cause your Jenkins build to fail. Please look at that the [troubleshooting guide](https://hmcts.github.io/cloud-native-platform/troubleshooting/#golden-path) and follow below to fix them.
 
 1. Clone repo: `labs-<your-hmcts-github-user-id>-nodejs`.
 2. Navigate to your repository directory:
@@ -149,10 +149,7 @@ If your Jenkins build fails due to Node.js vulnerabilities, you will need to res
    brew install node
    brew install yarn
    ```
-4. Run the following command to audit and record known issues:
-   ```
-   yarn npm audit --recursive --environment production --json > yarn-audit-known-issues
-   ```
+4. Fix vulnerabilities
 5. Commit and push the changes to the `master` branch.
 
 After pushing, check the Jenkins pipeline [sandbox Jenkins](https://sandbox-build.hmcts.net/job/HMCTS_j_to_z_Sandbox/job/labs-<your-hmcts-github-user-id>-nodejs/). In the console output, look for the image tag in the format:
