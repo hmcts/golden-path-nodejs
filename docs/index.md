@@ -172,8 +172,20 @@ To confirm your change has been applied in the cluster, you can connect to the c
 To make sure your pod is running as expected and to check the status of your HelmRelease run the following commands (make sure to swap YourGithubUsername with your GitHub username):
 
 ```command
- kubectl get hr labs-YourGithubUsername-nodejs -n labs
- kubectl get pods -l app.kubernetes.io/name=labs-YourGithubUsername-nodejs -n labs
+kubectl get hr labs-YourGithubUsername-nodejs -n labs
+kubectl get pods -l app.kubernetes.io/instance=labs-YourGithubUsername-nodejs -n labs
+```
+
+Alternatively, if you are having trouble finding your pods you can display all pods in the labs namespace:
+
+```command
+kubectl get pods -n labs
+```
+
+For more detailed information about your pod you can run:
+
+```command
+kubectl describe pod <pod-name>
 ```
 
 ### Access application
@@ -204,6 +216,9 @@ We are going to update the application by changing the text on the home page.
 9. Run the Jenkins pipeline against the master branch (this will trigger automatically on the production Jenkins instance).
 10. Reload your application in your browser and check it now shows your change to the heading:
 ![Hello World](images/HelloWorld.png)
+
+If you are having any issues you might want to confirm that the Flux has picked up your new image by [checking for the commit related to your application in the cnp-flux-config repository](https://github.com/hmcts/cnp-flux-config/commits/master/).
+Keep in mind that new changes are commited very frequently in this repository so if you made the change long time ago you might need to scroll through a lot of commits.
 
 ## Feedback
 
