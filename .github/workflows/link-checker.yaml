@@ -21,18 +21,8 @@ jobs:
       - name: Link Checker
         uses: lycheeverse/lychee-action@v1
         with:
-          args: >
-            --verbose
-            --no-progress
-            --accept 200,204,429
-            --timeout 20
-            --max-retries 3
-            --exclude 'linkedin\.com'
-            --exclude 'twitter\.com'
-            --exclude 'facebook\.com'
-            '**/*.md'
-            '**/*.yaml'
-            '**/*.yml'
+          args: --config .lycheerc.toml --verbose '**/*.md' '**/*.yaml' '**/*.yml'
           fail: true
+          token: ${{ secrets.GH_TOKEN }}
         env:
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
