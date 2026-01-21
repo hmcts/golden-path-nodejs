@@ -113,6 +113,7 @@ mojcppprod
 mpd
 mynodepool
 myregistry
+njk
 nodelocaldns
 nodepool
 NONLINE

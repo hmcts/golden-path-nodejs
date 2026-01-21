@@ -22,3 +22,5 @@ podName=[^\s\/]+
 ## Ignore image references
 !\[[^\]]*\]\((.*?)\s*("(?:.*[^"])")?\s*\)
 <\s*img\s+[^>]*src\s*=\s*.*
+## Ignore placeholder x's (like xxxxxx or xxxxxxxx)
+\bx{5,}\b
