@@ -1,0 +1,35 @@
+# Lychee link checker configuration
+# https://lychee.cli.rs/#/usage/config
+
+# Maximum number of concurrent network requests
+max_concurrency = 10
+
+# Maximum number of retries per request
+max_retries = 3
+
+# Timeout per request in seconds
+timeout = 30
+
+# Accept specific HTTP status codes as valid
+accept = [200, 204, 429]
+
+# User agent
+user_agent = "lychee/link-checker"
+
+# Exclude URLs matching these patterns
+exclude = [
+    # Ignore pulls/branches as these do not translate to raw content
+    '.*github\.com/hmcts/.*(?:pull|tree|commit).*',
+    # App health should not affect runbook PRs
+    '.*\.platform\.hmcts\.net.*',
+    # These return 405s in a browser, which is expected
+    '.*\.hmcts\.net/sonarqube-webhook/.*',
+    # Social media sites that often block automated checkers
+    '.*linkedin\.com.*',
+    '.*twitter\.com.*',
+    '.*facebook\.com.*',
+]
+
+# Include additional headers for GitHub authentication
+# The GH_TOKEN will be automatically used by lychee when set in the environment
+[headers]

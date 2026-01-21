@@ -1,0 +1,16 @@
+ignore$
+\.png$
+\.svg$
+\.drawio$
+\.t$
+^LICENSE\.txt$
+^\Gemfile*
+^\Gemfile.lock
+^\Qsource/Certificates/forms/SSL-Certificate-Request-Form.docx\E$
+(?:^|/)accounts\.html\.md\.erb$
+pmd
+DEVJUMPL
+mpd
+onlineplea
+wafcc
+APIGW
