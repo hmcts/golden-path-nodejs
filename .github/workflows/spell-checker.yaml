@@ -12,22 +12,38 @@ on:
 
 jobs:
   spellcheck:
-    name: Check Spelling
     runs-on: ubuntu-latest
+    name: Check spelling
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Check Spelling
-        uses: check-spelling/check-spelling@main
+      - name: Spell-Check
+        uses: check-spelling/check-spelling@v0.0.24
         with:
-          check_file_names: 1
-          post_comment: 0
-          use_magic_file: 1
-          report-timing: 1
-          warnings: bad-regex,binary-file,deprecated-feature,large-file,limited-references,no-newline-at-eof,noisy-file,non-alpha-in-dictionary,token-is-substring,unexpected-line-ending,whitespace-in-dictionary,minified-file,unsupported-configuration,no-files-to-check
-          use_sarif: 1
-          extra_dictionary_limit: 20
-          extra_dictionaries: |
+          checkout: true
+          only_check_changed_files: true
+          suppress_push_for_open_pull_request: 1
+          extra_dictionaries:
+            cspell:npm/dict/npm.txt
+            cspell:fullstack/dict/fullstack.txt
+            cspell:php/dict/php.txt
+            cspell:k8s/dict/k8s.txt
+            cspell:html/dict/html.txt
+            cspell:typescript/dict/typescript.txt
+            cspell:golang/dict/go.txt
+            cspell:dotnet/dict/dotnet.txt
+            cspell:mnemonics/src/mnemonics.txt
+            cspell:rust/dict/rust.txt
+            cspell:monkeyc/src/monkeyc_keywords.txt
+            cspell:cryptocurrencies/cryptocurrencies.txt
+            cspell:scala/dict/scala.txt
+            cspell:ruby/dict/ruby.txt
+            cspell:lua/dict/lua.txt
+            cspell:css/dict/css.txt
+            cspell:r/src/r.txt
+            cspell:html-symbol-entities/entities.txt
+            cspell:java/src/java.txt
             cspell:software-terms/dict/softwareTerms.txt
+            cspell:python/src/python/python-lib.txt
             cspell:node/dict/node.txt
+            cspell:python/src/common/extra.txt
+            cspell:public-licenses/src/generated/public-licenses.txt
+            cspell:aws/aws.txt
