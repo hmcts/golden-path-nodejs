@@ -131,7 +131,7 @@ More information on how we configure Azure Front Door can be found in [The HMCTS
 
 ### Deploy application
 
-We use [GitOps](https://docs.gitops.weave.works/) principles for application deployment to Kubernetes.
+We use [GitOps](https://docs.gitops.weaveworks.org/) principles for application deployment to Kubernetes.
 
 Your application will be deployed in the `labs` Kubernetes namespace which has already been created.
 
