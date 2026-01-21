@@ -1,0 +1,38 @@
+name: Link Checker
+
+on:
+  pull_request:
+    branches:
+      - main
+      - master
+  push:
+    branches:
+      - main
+      - master
+
+jobs:
+  linkcheck:
+    name: Check Links
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Link Checker
+        uses: lycheeverse/lychee-action@v1
+        with:
+          args: >
+            --verbose
+            --no-progress
+            --accept 200,204,429
+            --timeout 20
+            --max-retries 3
+            --exclude 'linkedin\.com'
+            --exclude 'twitter\.com'
+            --exclude 'facebook\.com'
+            '**/*.md'
+            '**/*.yaml'
+            '**/*.yml'
+          fail: true
+        env:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
