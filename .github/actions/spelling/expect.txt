@@ -25,6 +25,7 @@ aso
 atlassian
 atlassiannonprod
 atlasssian
+azurewebsite
 AZDO
 azinfra
 azmk
@@ -48,7 +49,7 @@ customisations
 CVP
 Dac
 datacentre
-Datlassian
+datlassian
 DBfor
 dbsetup
 dde
@@ -59,6 +60,8 @@ Dhhmm
 dgwzf
 dnat
 dockerfiles
+docx
+drawio
 dsl
 eba
 EDB
@@ -95,6 +98,9 @@ leaderelection
 lhr
 libragob
 libragobrestore
+linkcheck
+linkedin
+lycheeverse
 managedidentity
 Manan
 mdv
@@ -130,6 +136,7 @@ privatednszonename
 privatekeyfilename
 PRX
 pvc
+Qsource
 Qube
 recoverypoint
 regitries
@@ -177,6 +184,7 @@ wafcc
 wrkagentpool
 wsdl
 xpack
+XGET
 XXXX
 yourname
 yye
