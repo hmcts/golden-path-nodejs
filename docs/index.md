@@ -14,7 +14,7 @@ Before starting this tutorial, make sure you have:
   - [#golden-path](https://hmcts-reform.slack.com/app_redirect?channel=golden-path) is for community discussion about the tutorials.
   - [#labs-build-notices](https://hmcts-reform.slack.com/app_redirect?channel=labs-build-notices) Jenkins build notices channel.
   - [#platops-help](https://hmcts-reform.slack.com/app_redirect?channel=platops-help) is for raising support requests to the `Platform Operations` team.
- 
+
 ## Troubleshooting
 
 If you run into any issues while running through the steps below, please see our [troubleshooting](https://hmcts.github.io/cloud-native-platform/troubleshooting/#troubleshooting-issues) guide for information on how to resolve any issues you may encounter.
@@ -27,35 +27,37 @@ First, we're going to create a GitHub repository with our template. You'll need 
 
 Click `Create` in the Backstage sidebar and choose [`ExpressJS`](https://backstage.platform.hmcts.net/create) template.
 
-   Fill out the fields:
+Fill out the fields:
 
 - Page 1 - Provide some simple information
-  - Product:                       `labs`
+  - Product: `labs`
 
-  - Component:                     `YourGithubUsername-nodejs` - make sure you update this
+  - Component: `YourGithubUsername-nodejs` - make sure you update this
 
-  - Slack contact channel:         `cloud-native`
+  - Slack contact channel: `cloud-native`
 
-  - Description:                   `Deploying a Node.js application`
+  - Description: `Deploying a Node.js application`
 
-  - HTTP port:                     `8080` - do not use any port number lower than 1024
+  - HTTP port: `8080` - do not use any port number lower than 1024
 
-  - GitHub admin team:             `hmcts/all-org-members` - you can also use your own team
+  - GitHub admin team: `hmcts/all-org-members` - you can also use your own team
 
-  - Owner:                         `dts_cft_developers` - normally you would use your teams AzureAD group here
+  - Owner: `dts_cft_developers` - normally you would use your teams AzureAD group here
 
 - Page 2 - Choose a location
-  - Host:                          `github.com`
+  - Host: `github.com`
 
-  - Owner:                         `hmcts`
+  - Owner: `hmcts`
 
-  - Repository:                    `labs-YourGithubUsername-nodejs`
+  - Repository: `labs-YourGithubUsername-nodejs`
 
 ### Build application
 
+> **Note:** Before your repository will appear in Jenkins, it must be added to the [Jenkins deployment controls allowlist](https://hmcts.github.io/cloud-native-platform/onboarding/team/jenkins.html). Follow the onboarding steps there to raise a pull request adding your repository to `deployment-controls.yml`.
+
 1. Log in to Sandbox Jenkins and select [HMCTS - J to Z](https://sandbox-build.platform.hmcts.net/job/HMCTS_j_to_z_Sandbox/) folder. Check if your repository is there, if it's not then scan the organization by clicking on `Scan Organization Now`.
-The new repository should be listed under repositories after the scan finishes.
-Logs can be monitored under `Scan Organization Log`.
+   The new repository should be listed under repositories after the scan finishes.
+   Logs can be monitored under `Scan Organization Log`.
 
 2. Click on your repository name.
 
@@ -106,25 +108,25 @@ More information on how we configure Azure Front Door can be found in [The HMCTS
 3. Click the pencil icon to edit the file in GitHub.
 4. Add the below snippet to the `public_lb_config` and remember to put a comma after the previous entry.
 
-    ```
-    {
-      name  = "labs-YourGitHubUsername-nodejs"
-      ports = [80]
-    }
-    ```
+   ```
+   {
+     name  = "labs-YourGitHubUsername-nodejs"
+     ports = [80]
+   }
+   ```
 
 5. Add the below snippet to the `aks_config` and remember to put a comma after the previous entry and increment the index to the next available, otherwise the pipeline will fail on apply. You can get the IP of the frontend app gateway from [here](https://github.com/hmcts/azure-platform-terraform/blob/6f0b867e75b7e9cee9e7adc87084f6911eb5373d/environments/sbox/sbox.tfvars#L20).
 
-    ```
-    {
-      name : "labs-YourGitHubUsername-nodejs",
-      palo_ips : {
-        "uksouth" : "<IP of the frontend app gateway>",
-      },
-      port : [80, ]
-      index : 9
-    }
-    ```
+   ```
+   {
+     name : "labs-YourGitHubUsername-nodejs",
+     palo_ips : {
+       "uksouth" : "<IP of the frontend app gateway>",
+     },
+     port : [80, ]
+     index : 9
+   }
+   ```
 
 6. Scroll down to the bottom to the 'Commit changes' section. Select `Create a new branch for this commit and start a pull request` and give your branch a name. Commit the file and create a pull request.
 7. To complete this section you will need your pull request to be approved, someone on your team should be able to do this. If you get stuck, try asking in #platops-code-review on Slack. Once approved and the build has passed then merge your pull request. If you have a permissions issue then ask in #golden-path on Slack.
@@ -182,9 +184,9 @@ If all went well, your application should be accessable now.
 
 The URL will be (update the GitHub username variable):
 
-   ```text
-   http://labs-$YourGitHubUsername-nodejs.sandbox.platform.hmcts.net
-   ```  
+```text
+http://labs-$YourGitHubUsername-nodejs.sandbox.platform.hmcts.net
+```
 
 Open this in your browser, you should see:
 ![Default Page Template](images/DefaultPageTemplate.png)
@@ -203,7 +205,7 @@ We are going to update the application by changing the text on the home page.
 8. Ask someone in your team to review your pull request and then merge it.
 9. Run the Jenkins pipeline against the master branch (this will trigger automatically on the production Jenkins instance).
 10. Reload your application in your browser and check it now shows your change to the heading:
-![Hello World](images/HelloWorld.png)
+    ![Hello World](images/HelloWorld.png)
 
 ## Feedback
 
