@@ -9,7 +9,7 @@ At the end of this tutorial, you will be able to access your application via the
 Before starting this tutorial, make sure you have:
 
 - An account on HMCTS Azure AD. See the [onboarding guide](https://hmcts.github.io/cloud-native-platform/onboarding/person/index.html#microsoft-entra-id-groups) to get set up.
-- Access to the HMCTS GitHub organisation. See the [onboarding guide](https://hmcts.github.io/cloud-native-platform/onboarding/team/github.html#github) to get setup.
+- Access to the HMCTS GitHub organisation. See the [onboarding guide](https://hmcts.github.io/cloud-native-platform/onboarding/team/github-repositories.html) to get setup.
 - (Recommended) Join the below Slack channels
   - [#golden-path](https://hmcts-reform.slack.com/app_redirect?channel=golden-path) is for community discussion about the tutorials.
   - [#labs-build-notices](https://hmcts-reform.slack.com/app_redirect?channel=labs-build-notices) Jenkins build notices channel.
