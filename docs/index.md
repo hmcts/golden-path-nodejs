@@ -9,7 +9,7 @@ At the end of this tutorial, you will be able to access your application via the
 Before starting this tutorial, make sure you have:
 
 - An account on HMCTS Azure AD. See the [onboarding guide](https://hmcts.github.io/cloud-native-platform/onboarding/person/index.html#microsoft-entra-id-groups) to get set up.
-- Access to the HMCTS GitHub organisation. See the [onboarding guide](https://hmcts.github.io/cloud-native-platform/onboarding/team/github.html#github) to get setup.
+- Access to the HMCTS GitHub organisation. See the [onboarding guide](https://hmcts.github.io/cloud-native-platform/onboarding/team/github-repositories.html) to get setup.
 - (Recommended) Join the below Slack channels
   - [#golden-path](https://hmcts-reform.slack.com/app_redirect?channel=golden-path) is for community discussion about the tutorials.
   - [#labs-build-notices](https://hmcts-reform.slack.com/app_redirect?channel=labs-build-notices) Jenkins build notices channel.
@@ -100,36 +100,6 @@ You will need to add a couple of lines of config for the application to the sand
 5. To complete this section you will need your pull request to be approved, someone on your team should be able to do this. If you get stuck, try asking in #platops-code-review on Slack. Once approved and the build has passed then merge your pull request. If you have a permissions issue then ask in #golden-path on Slack.
 
 More information on how we configure Azure Front Door can be found in [The HMCTS Way](https://hmcts.github.io/cloud-native-platform/path-to-live/front-door.html#purpose).
-
-### Configure Azure Firewall for Application
-
-1. Checkout the [hub-terraform-infra](https://github.com/hmcts/hub-terraform-infra) repo.
-2. Navigate to the file [path](https://github.com/hmcts/hub-terraform-infra/blob/master/environments/hub_infra-sbox-int.tfvars).
-3. Click the pencil icon to edit the file in GitHub.
-4. Add the below snippet to the `public_lb_config` and remember to put a comma after the previous entry.
-
-   ```
-   {
-     name  = "labs-YourGitHubUsername-nodejs"
-     ports = [80]
-   }
-   ```
-
-5. Add the below snippet to the `aks_config` and remember to put a comma after the previous entry and increment the index to the next available, otherwise the pipeline will fail on apply. You can get the IP of the frontend app gateway from [here](https://github.com/hmcts/azure-platform-terraform/blob/6f0b867e75b7e9cee9e7adc87084f6911eb5373d/environments/sbox/sbox.tfvars#L20).
-
-   ```
-   {
-     name : "labs-YourGitHubUsername-nodejs",
-     palo_ips : {
-       "uksouth" : "<IP of the frontend app gateway>",
-     },
-     port : [80, ]
-     index : 9
-   }
-   ```
-
-6. Scroll down to the bottom to the 'Commit changes' section. Select `Create a new branch for this commit and start a pull request` and give your branch a name. Commit the file and create a pull request.
-7. To complete this section you will need your pull request to be approved, someone on your team should be able to do this. If you get stuck, try asking in #platops-code-review on Slack. Once approved and the build has passed then merge your pull request. If you have a permissions issue then ask in #golden-path on Slack.
 
 ### Deploy application
 
